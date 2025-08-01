@@ -22,10 +22,10 @@ public partial class Main : Form
 
         SaveFileDialog dialog = new()
         {
-            Filter = "DBファイル|*.db;",
+            Filter = "データベースファイル|*.db;",
             Title = "新規データベースファイルの保存先を選択してください",
             FileName = "new_osu!.db",
-            InitialDirectory = new DirectoryInfo(osuDbPath).Parent?.FullName ?? Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            InitialDirectory = Path.GetDirectoryName(osuDbPath) ?? Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
         };
 
         if (dialog.ShowDialog() != DialogResult.OK) return;
