@@ -40,7 +40,7 @@ public partial class Main : Form
     {
         OpenFileDialog dialog = new()
         {
-            Filter = "データべースファイル|*.db",
+            Filter = "osu!データべースファイル|osu!.db",
             Title = "osu!.dbファイルを選択してください"
         };
 
