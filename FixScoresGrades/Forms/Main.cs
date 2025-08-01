@@ -33,12 +33,12 @@ public partial class Main : Form
         OsuDatabase fixedOsu = OsuUtils.FixGrades(osuDbPath);
         fixedOsu.Save(dialog.FileName);
 
-        MessageBox.Show("出力が完了しました！\nosu!.dbをosu!.db.oldなどに改名し、新しく作ったファイルをosu!.dbとすることで変更が反映されます！");
+        MessageBox.Show("出力が完了しました！\nosu!.dbをosu!.db.oldなどに改名し、新しく作ったファイルをosu!.dbとすることで変更が反映されます！", "完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void OpenFile_Click(object sender, EventArgs e)
     {
-        OpenFileDialog dialog = new OpenFileDialog()
+        OpenFileDialog dialog = new()
         {
             Filter = "データべースファイル|*.db",
             Title = "osu!.dbファイルを選択してください"
